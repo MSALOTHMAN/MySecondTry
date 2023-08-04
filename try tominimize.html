@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+h1{font-size: 40px;
+    font-family: 'Amiri', serif;
+    text-decoration: underline;
+
+    font-size: 40px;
+    font-family: 'Amiri', serif;
+    text-decoration: underline;
+
+    
+
+}
+
+
+.header{
+font-size: 16px;
+font-family: 'Amiri', serif;
+
+
+
+}
+
+.container {
+margin-top: 2%;
+text-align: center;
+}
+
+table {
+border-collapse: collapse;
+margin: 20px auto;
+}
+
+tr.header {
+appearance: none;
+font-family: 'Times New Roman', Times, serif;
+font-size: 16px;
+border-color:white;
+}
+
+body {
+    padding: 700px 0px 0px;
+    line-height: 24px;
+    border: 0px none rgb(35, 124, 214);
+    box-sizing: border-box;
+    padding-top: 7px;
+
+}
+
+td, th {
+padding: 4px;
+border: 1px dashed #ccc;
+width: 130px;
+
+}
+
+.Botton{
+margin-top: 2%;
+margin-left: 60%;
+
+}
+
+.button-onclick{
+    background-color: antiquewhite;
+}
+
+.calculate-button {
+    padding: 10px 20px;
+    width: 140px;
+    height: 40px;
+  background-color:whitesmoke;
+  border: grey;
+  color:black;
+  border-color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 14px;
+text-align: center;
+}
+
+.CalculateTotal-button {
+    padding: 10px 20px;
+    width: 140px;
+    height: 40px;
+  background-color: whitesmoke;
+  color:black;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 14px;
+}
+
+
+
+.CalculateTotal-button:active {
+    background-color: grey;
+}
+
+.CalculateTotal-button:hover{
+    background-color: lightskyblue;
+    text-decoration:underline;
+}
+.calculate-button:active {
+    background-color: grey;
+}
+.calculate-button:hover {
+    background-color:lightskyblue;
+    text-decoration:underline;
+}
+
+.AddRow{
+
+padding: 10px 20px;
+  width: 140px;
+  height: 40px;
+  background-color:whitesmoke;
+  color: black;
+  border: none;
+  position:relative;
+  margin-right: 67.5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border-color: black;
+font-family: 'Times New Roman', Times, serif;
+font-size: 14px;
+}
+.AddRow:active{
+    background-color:lightskyblue;
+    text-decoration:underline;
+}
+
+
+
+
+
+
+
+.ingredient{
+position:relative;
+width: 150px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.purchase-quantity {
+position: relative;
+width: 160px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.purchase-unit {
+position: relative;
+width: 120px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.cost-purchase {
+position: relative;
+width: 160px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+backdrop-filter: blur(15px);
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.needed-quantity {
+position: relative;
+width: 150px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.recipe-unit
+{
+position: relative;
+width: 120px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+
+}
+
+.cost-ingredient {
+position: relative;
+width: 90px;
+height: 30px;
+text-align: center;
+background: transparent;
+border: 1px solid;
+border-color: #fff;
+border-radius: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Amiri', serif;
+font-size: 16px;
+}
+
+.needed-quantity:active {
+
+}
+
+
+
+
+.TotalCost {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10%;
+  margin-left: 8%;
+  margin-top: 1%;
+}
+
+
+
+.recipe-name {
+  background-color:white ;
+}
+
+#recipe-name {
+  /* Add your desired styles here */
+  width: 160px;
+  height: 20px;
+  padding: 10px;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  font-family: 'Amiri', serif;
+}
+
+/* Additional styles for placeholder text */
+#recipe-name::placeholder {
+  color: #999;
+  opacity: 0.7; /* adjust as needed */
+}
+#serving-size{
+    width: 80px;
+  height: 20px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  font-family: 'Amiri', serif;
+font-size: 16px;
+}
+
+#serving-size::placeholder {
+    color: #999;
+  opacity: 0.7;
+
+
+}
+
+
+span#total-recipe-cost {
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 20px;
+  border: 1px solid black;
+  background-color: transparent;
+  margin-left: 9%;
+  margin-right: 2%;}
+
+  span#cost-per-serving {
+padding: 5px;
+  padding-left: 30px;
+  padding-right: 20px;
+  border: 1px solid black;
+  background-color: transparent;
+  margin-left: 15%;
+
+  }
+   p {
+    font-size: 20px;
+  color: #555;
+  font-family: 'Amiri', serif;
+  margin-top: 8%;
+
+   }
+
+
+
+
+
+
+</style>
+
+</head>
+
+
+
+
+
+<body>
+
+    <div class="container">
+        <h1>Recipe Cost Calculator</h1>	
+
+        
+        <p>                                    
+                       
+                       
+                       
+                       
+            Total Recipe Cost 
+                           Cost Per Serving</p>
+        
+
+
+        <div class="TotalCost">
+            <input type="text" id="recipe-name" placeholder="Recipe Name">
+            <input type="Number" id="serving-size" placeholder="Serving Size">
+            <span id="total-recipe-cost"></span>
+            <span id="cost-per-serving"> </span>
+           
+        </div>
+
+
+
+    <div class="Botton">
+        <button onclick="calculateCost()" class="calculate-button">Calculate Cost</button>
+        <button onclick="CalculateTotal()" class="CalculateTotal-button">Calculate Total</button>
+    </div>
+
+
+   
+    
+    <table>
+        <tr class="header">
+            <th>Ingredient</th>
+            <th>Purchase Quantity</th>
+            <th>Quantity Unit</th>
+            <th>Cost of Purchase</th>
+            <th>Quantity Needed</th>
+            <th>Recipe Unit</th>
+            <th>Cost of Ingredient</th>
+        </tr>
+        <tr>
+            <td><input type="text" class="ingredient"></td>
+            <td><input type="number" min="0" class="purchase-quantity"></td>
+            <td>
+                <select class="purchase-unit">
+                    <option value="gram">gram</option>
+                    <option value="kilogram">kilogram</option>
+                    <option value="liter">liter</option>
+                    <option value="milliliter">milliliter</option>
+                    <option value="piece">Pieces</option>
+                </select>
+            </td>
+            <td><input type="number" min="0" step="0.01" class="cost-purchase"></td>
+            <td><input type="number" min="0" class="needed-quantity"></td>
+            <td>
+                <select class="recipe-unit">
+                    <option value="gram">gram</option>
+                    <option value="kilogram">kilogram</option>
+                    <option value="liter">liter</option>
+                    <option value="milliliter">milliliter</option>
+                    <option value="piece">Pieces</option>
+                </select>
+            </td>
+            <td>
+                <span class="cost-ingredient"></span>
+              </td>
+        </tr>
+        <tr>
+            <td><input type="text" class="ingredient"></td>
+            <td><input type="number" min="0" class="purchase-quantity"></td>
+            <td>
+                <select class="purchase-unit">
+                    <option value="gram">gram</option>
+                    <option value="kilogram">kilogram</option>
+                    <option value="liter">liter</option>
+                    <option value="milliliter">milliliter</option>
+                    <option value="piece">Pieces</option>
+                </select>
+            </td>
+            <td><input type="number" min="0" step="0.01" class="cost-purchase"></td>
+            <td><input type="number" min="0" class="needed-quantity"></td>
+            <td>
+                <select class="recipe-unit">
+                    <option value="gram">gram</option>
+                    <option value="kilogram">kilogram</option>
+                    <option value="liter">liter</option>
+                    <option value="milliliter">milliliter</option>
+                    <option value="piece">Pieces</option>
+                </select>
+            </td>
+            <td>
+                <span class="cost-ingredient"></span>
+              </td>
+        </tr>
+
+    </table>
+
+    <button onclick="AddRows()" class="AddRow">Add Rows +</button>
+</div>
+
+    <script>
+
+        function calculateCost() {
+          var rows = document.querySelectorAll("table tr:not(.header)");
+        
+          for (var i = 0; i < rows.length; i++) {
+            var purchaseQuantity = parseFloat(rows[i].querySelector(".purchase-quantity").value);
+            var costPurchase = parseFloat(rows[i].querySelector(".cost-purchase").value);
+            var neededQuantity = parseFloat(rows[i].querySelector(".needed-quantity").value);
+        
+            // Convert purchase quantity to recipe unit
+            var purchaseUnit = rows[i].querySelector(".purchase-unit").value;
+            var recipeUnit = rows[i].querySelector(".recipe-unit").value;
+            if (purchaseUnit !== recipeUnit) {
+              switch(purchaseUnit) {
+                case "gram":
+                  if (recipeUnit === "kilogram") {
+                    purchaseQuantity = purchaseQuantity / 1000;
+                  } else if (recipeUnit === "milliliter") {
+                    purchaseQuantity = purchaseQuantity * 0.7895;
+                  }
+                  break;
+                case "kilogram":
+                  if (recipeUnit === "gram") {
+                    purchaseQuantity = purchaseQuantity * 1000;
+                  } else if (recipeUnit === "milliliter") {
+                    purchaseQuantity = purchaseQuantity * 789.5;
+                  }
+                  break;
+                case "liter":
+                  if (recipeUnit === "milliliter") {
+                    purchaseQuantity = purchaseQuantity * 1000;
+                  }
+                  break;
+                case "milliliter":
+                  if (recipeUnit === "liter") {
+                    purchaseQuantity = purchaseQuantity / 1000;
+                  }
+                  break;
+              }
+            }
+        
+            // Calculate cost of ingredient
+            if (purchaseUnit === recipeUnit && purchaseUnit === "Pieces") {
+              var costIngredient = costPurchase * neededQuantity;
+            } else {
+              var costIngredient = (costPurchase / purchaseQuantity) * neededQuantity;
+            }
+            rows[i].querySelector(".cost-ingredient").textContent = costIngredient.toFixed(2);
+          }
+        }
+        
+        
+        
+        
+        
+        
+            const table = document.querySelector('table');
+        const maxRows = 1;
+        
+        const AddRows = () => {
+          for (let i = 0; i < maxRows; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td><input type="text" class="ingredient"></td>
+              <td><input type="number" min="0" class="purchase-quantity"></td>
+              <td>
+                <select class="purchase-unit">
+                  <option value="gram">gram</option>
+                  <option value="kilogram">kilogram</option>
+                  <option value="liter">liter</option>
+                  <option value="milliliter">milliliter</option>
+                  <option value="pieces">Pieces </option>
+                  
+                </select>
+              </td>
+              <td><input type="number" min="0" step="0.01" class="cost-purchase"></td>
+              <td><input type="number" min="0" class="needed-quantity"></td>
+              <td>
+                <select class="recipe-unit">
+                  <option value="gram">gram</option>
+                  <option value="kilogram">kilogram</option>
+                  <option value="liter">liter</option>
+                  <option value="milliliter">milliliter</option>
+                  <option value="pieces">Pieces </option>
+                </select>
+              </td>
+              <td><span class="cost-ingredient"></td>
+                
+            `;
+            table.appendChild(row);
+          }
+        };
+        
+        document.querySelector('#AddRows').addEventListener('click', AddRows);
+            
+         
+        
+        
+        function CalculateTotal() {
+          var totalIngredientCost = 0;
+          var rows = document.querySelectorAll("table tr:not(.header)");
+          for (var i = 0; i < rows.length; i++) {
+            var costIngredient = parseFloat(rows[i].querySelector(".cost-ingredient").textContent);
+            totalIngredientCost += costIngredient;
+          }
+          document.getElementById("total-recipe-cost").innerHTML = totalIngredientCost.toFixed(2);
+        
+          var servingSize = parseFloat(document.getElementById("serving-size").value);
+          var costPerServing = totalIngredientCost / servingSize;
+          document.getElementById("cost-per-serving").innerHTML = costPerServing.toFixed(2);
+        }
+            
+        
+        function SaveasPDF() {
+          // Get the HTML content of the page.
+          var html = document.querySelector("html").innerHTML;
+        
+          // Create a new PDF object.
+          var pdf = new jsPDF();
+        
+          // Add the HTML content to the PDF.
+          pdf.html(html);
+        
+          // Save the PDF file.
+          pdf.save("recipe-cost-calculator.pdf");
+        }
+        
+        
+        
+            
+            </script>
+
+
+	</body>
+</html>
+	
